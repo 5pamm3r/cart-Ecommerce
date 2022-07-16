@@ -1,0 +1,12 @@
+.Header .Header__links {
+  align-items: center;
+  position: absolute;
+  top: 55px;
+  left: 10px;
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: white;
+  padding: 10px;
+  line-height: 2.5rem;
+}

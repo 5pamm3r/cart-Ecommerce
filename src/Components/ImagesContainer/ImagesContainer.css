@@ -1,0 +1,12 @@
+.Images__container .Big__container-mobile {
+  width: 100%;
+  overflow: scroll;
+  white-space: nowrap;
+}
+.Big__container-mobile .Big__picture {
+  width: 100%;
+}
+
+.Images__container .Thumbnail__container {
+  display: none;
+}

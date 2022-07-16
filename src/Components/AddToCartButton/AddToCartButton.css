@@ -1,0 +1,13 @@
+.AddToCart {
+  width: 100%;
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  padding: 15px 0;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.AddToCart span {
+  margin-right: 15px
+}

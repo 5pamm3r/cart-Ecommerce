@@ -1,0 +1,40 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  margin: 0 auto;
+  padding: 20px;
+  align-items: center;
+  position: relative;
+} 
+.Header ul li {
+  cursor: pointer;
+}
+.Header .Header__logo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  
+}
+.Header__logo .Icon__burguer {
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.Header .Header__profile {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: 2rem;
+}
+.Header__profile .Icon__cart {
+  width: 20px;
+  height: 20px;
+
+}
+.Header__profile .Icon__profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
