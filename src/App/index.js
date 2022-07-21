@@ -22,6 +22,13 @@ function App() {
     setTotalItems(count)
   }, [cart]);
 
+  const onDeleteItem = (productName) => {
+    const index = cart.find(i => i.productName === productName)
+    const newItems = [...cart]
+    newItems.splice(index,1)
+    setCart(newItems)
+  }
+
   return (
     <div className="App">
       <Header
@@ -37,13 +44,14 @@ function App() {
             cart={cart}
             render={(item) => (
               <ItemsCart
-                key={Math.floor(Math.random() * 100)}
+                key={Math.floor(Math.random() * 1000)}
                 productName={item.productName}
                 price={item.price}
                 count={item.count}
                 totalPrice={item.count * item.price}
                 cart={cart}
                 setCart={setCart}
+                onDeleteItem={()=>onDeleteItem(item.productName)}
               />
             )}
           />

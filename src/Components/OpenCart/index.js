@@ -3,15 +3,6 @@ import React from "react";
 import "./OpenCart.css";
 
 function OpenCart({ cart, render }) {
-  // const onDeleteItem = () => {
-  //   // const index = cart.find(i => i.productName === productName)
-  //   // const newItems = [...cart]
-  //   // newItems.splice(index,1)
-  //   // setCart(newItems)
-  //   console.log(cart)
-  // }
-
-
   if (!!cart.length>0) {
     return (
       <div className="OpenCart__container">

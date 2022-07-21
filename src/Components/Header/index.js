@@ -45,9 +45,11 @@ function Header({
             className="Icon__cart"
             
           />
+          {totalItems>0 && (
           <div className="CartTotal__items">
             <span>{totalItems}</span>
           </div>
+          ) }
         </li>
         <li>
           <img
