@@ -1,33 +1,60 @@
-import { useState } from 'react';
-import './App.css';
-import Header from '../Components/Header';
-import Main from '../Components/Main';
-import ImagesContainer from '../Components/ImagesContainer';
-import Sidebar from '../Components/Sidebar';
-import DescriptionContainer from '../Components/DescriptionContainer';
-import AddToCartButton from '../Components/AddToCartButton';
-import HeaderLinks from '../Components/HeaderLinks';
-import OpenCart from '../Components/OpenCart';
+import { useEffect, useState } from "react";
+import "./App.css";
+import Header from "../Components/Header";
+import Main from "../Components/Main";
+import ImagesContainer from "../Components/ImagesContainer";
+import Sidebar from "../Components/Sidebar";
+import DescriptionContainer from "../Components/DescriptionContainer";
+import AddToCartButton from "../Components/AddToCartButton";
+import HeaderLinks from "../Components/HeaderLinks";
+import OpenCart from "../Components/OpenCart";
+import ItemsCart from "../Components/ItemsCart";
 
 function App() {
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
   const [count, setCount] = useState(0);
   const [openLinks, setOpenLinks] = useState(false);
-  const [openCart, setOpenCart] = useState(false)
+  const [openCart, setOpenCart] = useState(false);
+  const [totalItems, setTotalItems] = useState(0);
+
+  useEffect(() => {
+    const count = cart.reduce((prevValue, value) => prevValue + value.count, 0)
+    setTotalItems(count)
+  }, [cart]);
 
   return (
     <div className="App">
-      <Header cart={cart} setOpenLinks={setOpenLinks} setOpenCart={setOpenCart} >
-        {!!openLinks && <HeaderLinks/>}
-        {!!openCart && <OpenCart cart={cart} />}
+      <Header
+        setOpenLinks={setOpenLinks}
+        setOpenCart={setOpenCart}
+        openCart={openCart}
+        openLinks={openLinks}
+        totalItems={totalItems}
+      >
+        {!!openLinks && <HeaderLinks />}
+        {!!openCart && (
+          <OpenCart
+            cart={cart}
+            render={(item) => (
+              <ItemsCart
+                key={Math.floor(Math.random() * 100)}
+                productName={item.productName}
+                price={item.price}
+                count={item.count}
+                totalPrice={item.count * item.price}
+                cart={cart}
+                setCart={setCart}
+              />
+            )}
+          />
+        )}
       </Header>
       <Main>
         <ImagesContainer />
-        <DescriptionContainer count={count} setCount={setCount} >
-          <AddToCartButton setCart={setCart} count={count} />
+        <DescriptionContainer count={count} setCount={setCount}>
+          <AddToCartButton setCart={setCart} count={count} cart={cart} />
         </DescriptionContainer>
-        <Sidebar>
-        </Sidebar>
+        <Sidebar></Sidebar>
       </Main>
     </div>
   );
