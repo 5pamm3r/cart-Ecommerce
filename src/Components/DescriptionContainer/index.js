@@ -1,13 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DescriptionContainer.css";
 
 function DescriptionContainer({ count, setCount, children }) {
-
-  // React.useEffect(()=>{
-  //   document.getElementById('coso').textContent = cart.totalPrice;
-  // }, [cart])
-
-  
 
   const onRemoveItem = () => {
     if (count > 0) {
