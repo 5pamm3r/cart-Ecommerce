@@ -38,3 +38,18 @@
   height: 30px;
   border-radius: 100%;
 }
+.Header__profile .CartTotalItems__container {
+  position: relative;
+}
+.Header .CartTotal__items {
+  display: flex;
+  justify-content: center;
+  width: 27px;
+  height: 27px;  
+  background-color: hsl(26, 100%, 55%);
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  opacity: .8;
+  border-radius: 100%;
+}

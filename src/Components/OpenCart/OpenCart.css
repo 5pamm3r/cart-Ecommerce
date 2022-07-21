@@ -48,5 +48,11 @@
   font-weight: bold;
   color: white;
 
-
+}
+.OpenCart__container .Cart__empty {
+  text-align: center;
+  font-size: 2rem;
+  color: gray;
+  font-weight: bold;
+  padding: 20px;  
 }
